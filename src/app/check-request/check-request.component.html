@@ -1,0 +1,18 @@
+<div class="container" style="text-align:center">
+  <div>
+    IP Address: {{ipaddress}}
+  </div>
+  <div>
+    <strong>Device Information:</strong>
+  </div>
+  <div *ngFor="let x of deviceInfo | keys:propsToShow" style="text-align:left">
+    <div class="ui-g">
+      <div class="ui-g-3">
+        {{x.key}}
+      </div>
+      <div class="ui-g-9">
+        {{x.value}}
+      </div>
+    </div>
+  </div>
+</div>
