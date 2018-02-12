@@ -9,23 +9,28 @@ import { CheckRequestComponent } from './check-request/check-request.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { KeysPipe } from './pipes/KeysPipe';
+import { HomeComponent } from './home/home.component';
+import {DataTableModule} from 'primeng/datatable';
 
 const appRoutes: Routes = [
   { path: 'check-request', component: CheckRequestComponent },
+  { path: '**', component: HomeComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     KeysPipe,
-    CheckRequestComponent
+    CheckRequestComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    DeviceDetectorModule.forRoot()
+    DeviceDetectorModule.forRoot(),
+    DataTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
