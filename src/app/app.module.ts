@@ -10,11 +10,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { KeysPipe } from './pipes/KeysPipe';
 import { HomeComponent } from './home/home.component';
-import {DataTableModule} from 'primeng/datatable';
+import { DataTableModule } from 'primeng/datatable';
 
 const appRoutes: Routes = [
   { path: 'check-request', component: CheckRequestComponent },
-  { path: '**', component: HomeComponent, pathMatch: 'full' }
+  { path: 'home', component: HomeComponent },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
